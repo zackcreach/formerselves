@@ -1,0 +1,12 @@
+.Main {
+  font-size: 2rem;
+  color: blue;
+
+  &__bold {
+    font-weight: bold;
+  }
+
+  &__image {
+    width: 50%;
+  }
+}

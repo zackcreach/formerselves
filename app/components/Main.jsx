@@ -21,6 +21,7 @@ class Main extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
+    alert(`Here's what you entered: ${this.state.emailAddress}`);
     console.log(this.state.emailAddress);
   }
   render() {

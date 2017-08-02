@@ -32,7 +32,7 @@ class Main extends Component {
           </video>
         </div>
         <div className='Main__mask'></div>
-        <div>
+        <div className='Main__container'>
           <div className='Main__content'>
             <h1 className='Main__title'>All Our Former Selves</h1>
             <form className='Main__email-form' onSubmit={this.handleSubmit}>

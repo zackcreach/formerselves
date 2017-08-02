@@ -25,11 +25,18 @@
     z-index: -1;
   }
 
+  &__container {
+
+  }
+
   &__content {
-    display: flex;
-    flex-direction: column;
+    margin: auto;
+    width: 100%;
     color: #fff;
     text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
     z-index: 1;
   }
 
@@ -44,10 +51,17 @@
   }
 
   &__email {
-
+    padding: 8px;
+    width: 200px;
+    border: 0;
+    color: #555;
   }
 
   &__button {
-
+    background: #000;
+    color: #fff;
+    padding: 8px 20px;
+    margin: 0 0 0 10px;
+    border: 0;
   }
 }

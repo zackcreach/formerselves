@@ -1,5 +1,5 @@
 {
-  "name": "react-template-hot",
+  "name": "All Our Former Selves",
   "author": "Zack Creach",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --progress",

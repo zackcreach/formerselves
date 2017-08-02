@@ -1,5 +1,5 @@
 {
-  "name": "All Our Former Selves",
+  "name": "AllOurFormerSelves",
   "author": "Zack Creach",
   "scripts": {
     "start": "NODE_ENV=development webpack-dev-server --progress",

@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 module.exports = {
   entry: {
     app: [
@@ -39,6 +41,11 @@ module.exports = {
     //   template: 'public/index.html',
     //   inject: true,
     // }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+    }),
   ],
   devServer: { // Webpack config settings for webpack-dev-server. This can also be broken out into webpack-dev-server.js or server.js, but these parameters will override
     host: 'localhost',
@@ -110,5 +117,5 @@ module.exports = {
       },
     ],
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-eval-source-map',
 };

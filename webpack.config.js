@@ -50,7 +50,7 @@ module.exports = {
   devServer: { // Webpack config settings for webpack-dev-server. This can also be broken out into webpack-dev-server.js or server.js, but these parameters will override
     host: 'localhost',
     contentBase: './public', // contentBase is where your index.html file is, which in this case is not located in root (default) so we specify './public' instead
-    port: 3000,
+    port: process.env.PORT || 3000,
     hot: true, // necessary for hot module replacement plugin, can also be started with the webpack-dev-server --hot flag
     open: true, // open simply opens the browser to localhost when webpack compiles
     openPage: '', // openPage fixes a current issue where the "open" attribute opens to localhost:3000/undefined. It's an open issue on Github

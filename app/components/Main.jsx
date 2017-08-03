@@ -21,7 +21,7 @@ class Main extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    alert(`Here's what you entered: ${this.state.emailAddress}`);
+    alert(`Kevbot 3000 says: ${this.state.emailAddress}`);
     console.log(this.state.emailAddress);
   }
   render() {

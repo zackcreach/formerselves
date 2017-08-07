@@ -3,7 +3,7 @@
   "author": "Zack Creach",
   "scripts": {
     "start": "webpack-dev-server --progress",
-    "build": "NODE_ENV=production node server.js"
+    "build": "NODE_ENV=production webpack && NODE_ENV=production node server.js"
   },
   "dependencies": {
     "babel": "6.23.0",

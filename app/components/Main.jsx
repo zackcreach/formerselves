@@ -22,7 +22,7 @@ class Main extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    alert(`Kevbot 3000 says: ${this.state.emailAddress}`);
+    alert(`This will eventually go to Mailchimp: ${this.state.emailAddress}`);
     console.log(this.state.emailAddress);
   }
   render() {

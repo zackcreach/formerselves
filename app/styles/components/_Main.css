@@ -41,7 +41,7 @@
   }
 
   &__logo {
-    width: 500px;
+    width: 250px;
     margin-bottom: 30px;
   }
 
@@ -59,12 +59,12 @@
   }*/
 
   &__email-form {
-    width: 500px;
+    width: 250px;
     margin: auto;
   }
 
   &__email {
-    width: 75%;
+    width: 66.66%;
     padding: 8px;
     border: 0;
     color: #444;
@@ -77,10 +77,10 @@
   }
 
   &__button {
-    width: 25%;
+    width: 33.33%;
     background: #000;
     color: #fff;
-    padding: 8px 30px;
+    padding: 8px;
     margin: 0 0 0 0;
     border: 0;
     text-transform: uppercase;

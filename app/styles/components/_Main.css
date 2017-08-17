@@ -40,7 +40,12 @@
     z-index: 1;
   }
 
-  &__title {
+  &__logo {
+    width: 500px;
+    margin-bottom: 30px;
+  }
+
+  /*&__title {
     font-weight: 300;
     text-transform: uppercase;
     line-height: 0;
@@ -51,15 +56,16 @@
     @mixin atMedium {
       font-size: 2.5rem;
     }
-  }
+  }*/
 
   &__email-form {
-
+    width: 500px;
+    margin: auto;
   }
 
   &__email {
+    width: 75%;
     padding: 8px;
-    width: 200px;
     border: 0;
     color: #444;
     text-transform: uppercase;
@@ -71,6 +77,7 @@
   }
 
   &__button {
+    width: 25%;
     background: #000;
     color: #fff;
     padding: 8px 30px;

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import 'styles/styles';
+import logo from 'images/fs-logo';
 
 class Main extends Component {
   constructor(props) {
@@ -35,7 +36,8 @@ class Main extends Component {
         <div className='Main__mask'></div>
         <div className='Main__container'>
           <div className='Main__content'>
-            <h1 className='Main__title'>All Our Former Selves</h1>
+            {/* <svg><use xlinkHref={logo}></use></svg> */}
+            <img className='Main__logo' src={logo} />
             <form className='Main__email-form' onSubmit={this.handleSubmit}>
               <input className='Main__email' ref='active' value={this.state.emailAddress} onChange={this.handleChange} placeholder='Email Address'></input>
               <input className='Main__button' type='submit' value='Submit'/>

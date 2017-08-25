@@ -114,10 +114,10 @@ module.exports = {
               svgo: {
                 plugins: [
                   {
-                    removeViewBox: false
+                    removeViewBox: true
                   },
                   {
-                    removeEmptyAttrs: false
+                    removeEmptyAttrs: true
                   }
                 ]
               }

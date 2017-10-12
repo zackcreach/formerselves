@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import 'styles/styles';
 import logo from 'images/fs-logo';
+import base from '../base';
 
 export default class Main extends Component {
   constructor() {
@@ -8,14 +9,33 @@ export default class Main extends Component {
     
     this.state = {
       videoURL: 'https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761',
-      emailAddress: '',
+      emails: {},
       placeholder: 'Email Address'
     }
   }
+  componentWillMount() {
+    this.ref = base.syncState(`emails`, {
+      context: this,
+      state: 'emails'
+    });
+  }
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({
+    // capture email inputted in an object with a timestamp property
+    const timestamp = Date.now();
+    const email = {
       emailAddress: this.emailAddress.value,
+      timestamp
+    }
+    // create a copy of the state to add to
+    const emails = Object.assign({}, email);
+    // add a new record with the timestamp of the email
+    emails[`email--${timestamp}`] = email;
+    this.setState({
+      emails,
       placeholder: 'Submitted'
     });
     this.emailForm.reset();

@@ -2,28 +2,23 @@ import React, {Component} from 'react';
 import 'styles/styles';
 import logo from 'images/fs-logo';
 
-class Main extends Component {
-  constructor(props) {
-    super(props);
-
+export default class Main extends Component {
+  constructor() {
+    super();
+    
     this.state = {
       videoURL: 'https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761',
-      emailAddress: ''
+      emailAddress: '',
+      placeholder: 'Email Address'
     }
-  }
-  componentWillMount() {
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  handleChange(e) {
-    this.setState({
-      emailAddress: e.target.value
-    });
   }
   handleSubmit(e) {
     e.preventDefault();
-    alert(`This will eventually go to Mailchimp: ${this.state.emailAddress}`);
-    console.log(this.state.emailAddress);
+    this.setState({
+      emailAddress: this.emailAddress.value,
+      placeholder: 'Submitted'
+    });
+    this.emailForm.reset();
   }
   render() {
     return(
@@ -38,9 +33,9 @@ class Main extends Component {
           <div className='Main__content'>
             {/* <svg><use xlinkHref={logo}></use></svg> */}
             <img className='Main__logo' src={logo} />
-            <form className='Main__email-form' onSubmit={this.handleSubmit}>
-              <input className='Main__email' ref='active' value={this.state.emailAddress} onChange={this.handleChange} placeholder='Email Address'></input>
-              <input className='Main__button' type='submit' value='Submit'/>
+            <form className='Main__email-form' ref={(input) => {this.emailForm = input}} onSubmit={(e) => this.handleSubmit(e)}>
+              <input className='Main__email' ref={(input) => {this.emailAddress = input}} placeholder={this.state.placeholder} />
+              <input className='Main__button' type='submit'/>
             </form>
           </div>
         </div>
@@ -48,5 +43,3 @@ class Main extends Component {
     )
   }
 };
-
-export default Main;

@@ -61,6 +61,7 @@
   &__email-form {
     width: 250px;
     margin: auto;
+    text-align: left;
   }
 
   &__email {
@@ -70,10 +71,15 @@
     color: #444;
     text-transform: uppercase;
     font-size: .6rem;
+    transition: all .2s ease-out;
   }
 
   &__email::placeholder {
     color: #CCC;
+  }
+
+  &__email--full {
+    width: 100%;
   }
 
   &__button {
@@ -85,5 +91,11 @@
     border: 0;
     text-transform: uppercase;
     font-size: .6rem;
+    transition: all .2s ease-out;
+  }
+
+  &__button--disabled {
+    display: none;
+    width: 0;
   }
 }

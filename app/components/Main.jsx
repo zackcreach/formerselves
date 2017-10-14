@@ -12,10 +12,20 @@ export default class Main extends Component {
       videoURL: 'https://player.vimeo.com/external/158148793.hd.mp4?s=8e8741dbee251d5c35a759718d4b0976fbf38b6f&profile_id=119&oauth2_token_id=57447761',
       emailAddress: '',
       placeholder: 'Email Address',
-      buttonDisabled: false
+      buttonDisabled: true
     }
   }
-  handleSubmit(e) {
+  _handleChange(e) {
+    if (/(^\w.*?@.*?\.\w)/g.test(e.target.value)) {
+      console.log('%cValid email!', 'font-size: 16px; color: black; font-weight: bold')
+      this.setState({
+        buttonDisabled: false
+      })
+    } else {
+      console.log('%cKeep going...', 'font-size: 16px; color: red; font-weight: bold')
+    }
+  }
+  _handleSubmit(e) {
     e.preventDefault();
     this.emailAddress.style.background = 'green';
 
@@ -37,7 +47,7 @@ export default class Main extends Component {
       data: {email},
       then(err) {
         if (!err) {
-          console.log('Post Success!');
+          console.log('%cPost Success!', 'font-size: 16px; color: green; font-weight: bold')
         }
       }
     });
@@ -60,13 +70,14 @@ export default class Main extends Component {
             <form 
               className='Main__email-form' 
               ref={(input) => {this.emailForm = input}} 
-              onSubmit={(e) => this.handleSubmit(e)}
+              onSubmit={(e) => this._handleSubmit(e)}
+              onChange={(e) => this._handleChange(e)}
             >
               <input 
                 className={emailToggle}
                 ref={(input) => {this.emailAddress = input}} 
                 placeholder={this.state.placeholder}
-                disabled={this.state.buttonDisabled}
+                /* disabled={this.state.buttonDisabled} */
               />
               <input 
                 type='submit'

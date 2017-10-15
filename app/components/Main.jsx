@@ -17,7 +17,8 @@ export default class Main extends Component {
     }
   }
   _handleChange(e) {
-    if (/(^\w.*@\w+\.\w)/g.test(e.target.value)) {
+    let input = e.target.value;
+    if (/(^\w.*@\w+\.\w)/g.test(input)) {
       console.log('%cValid email!', 'font-size: 16px; color: black; font-weight: bold')
       this.setState({buttonDisabled: false});
     } else {
@@ -27,7 +28,6 @@ export default class Main extends Component {
   }
   _handleSubmit(e) {
     e.preventDefault();
-    this.emailAddress.style.background = 'green';
     // capture email inputted in an object with a timestamp property, formatted using moment
     // const timestamp = moment().format('MMMM Do YYYY, h:mm:ss A');
     // Using just Date.now() as we want the raw timestamp for later
@@ -51,6 +51,7 @@ export default class Main extends Component {
         }
       }
     });
+    this.emailAddress.style.background = 'green';
     this.emailForm.reset();
   }
   render() {
@@ -66,7 +67,7 @@ export default class Main extends Component {
         </div>
         <div className='Main__mask'></div>
         <div className='Main__container'>
-          <div className='Main__content'>
+          
             <img className='Main__logo' src={logo} />
             <form 
               className='Main__email-form' 
@@ -87,7 +88,6 @@ export default class Main extends Component {
               />
             </form>
           </div>
-        </div>
       </div>
     )
   }

@@ -12,6 +12,7 @@ img {
 
 * {
   box-sizing: border-box;
+  border-radius: 0;
 }
 
 a {

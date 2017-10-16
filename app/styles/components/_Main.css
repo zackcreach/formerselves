@@ -1,17 +1,43 @@
 .Main {
 
   &__video-container {
+    display: none;
+    visibility: hidden;
     position: absolute;
-    left: 0;
-    top: 0;
     z-index: -2;
     overflow: hidden;
-    width: 100%;
-    height: 100vh;
+
+    @mixin atMedium {
+      display: block;
+      visibility: visible;
+    }
   }
 
   &__video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
 
+  &__video-container-mobile {
+    display: block;
+    visibility: visible;
+    position: absolute;
+    z-index: -2;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+
+    @mixin atMedium {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &__bg-image {
+    height: 100vh;
+    object-fit: cover;
   }
 
   &__mask {
@@ -25,15 +51,11 @@
   }
 
   &__container {
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
-    z-index: 1;
   }
 
   &__logo {
@@ -43,8 +65,6 @@
 
   &__email-form {
     width: 250px;
-    text-align: left;
-    overflow: hidden;
   }
 
   &__email {

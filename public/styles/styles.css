@@ -52,9 +52,11 @@ $parallax-ios         : true !default;*/
   ;
   z-index: $distance * 1000;
 }*/
-body {
+html, body {
   font-family: Helvetica, sans-serif;
   font-size: 100%;
+  padding: 0;
+  margin: 0;
 }
 img {
   max-width: 100%;
@@ -78,10 +80,6 @@ a {
 		display: table;
 	}
 /*Component styles */
-.Main {
-  margin: 0;
-  padding: 0;
-}
 .Main__video-container {
     position: absolute;
     left: 0;
@@ -89,9 +87,10 @@ a {
     z-index: -2;
     overflow: hidden;
     width: 100%;
-    height: 100%;
+    height: 100vh;
   }
 .Main__video {
+
   }
 .Main__mask {
     top: 0;
@@ -102,47 +101,50 @@ a {
     background: rgba(0, 0, 0, .55);
     z-index: -1;
   }
+@media (min-width: 480px) {
+      .Main__mask__mask {
+        background: red;
+      }
+	}
 .Main__container {
-
+    padding: 0 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    height: 100vh;
   }
-.Main__content {
-    margin: auto;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    position: absolute;
-    z-index: 1;
+@media (min-width: 480px) {
+.Main__container {
+      padding: 0;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center
   }
+	}
 .Main__logo {
     width: 250px;
     margin-bottom: 30px;
   }
-/*&__title {
-    font-weight: 300;
-    text-transform: uppercase;
-    line-height: 0;
-    padding: 0 0 16px 0;
-    font-size: 1.8rem;
-    letter-spacing: .35rem;
-
-    @mixin atMedium {
-      font-size: 2.5rem;
-    }
-  }*/
 .Main__email-form {
     width: 250px;
-    margin: auto;
   }
 .Main__email {
     width: 66.66%;
     padding: 8px;
     border: 0;
     color: #444;
-    text-transform: uppercase;
     font-size: .6rem;
+    text-transform: uppercase;
   }
 .Main__email::-webkit-input-placeholder {
     color: #CCC;
@@ -150,18 +152,35 @@ a {
 .Main__email:-ms-input-placeholder {
     color: #CCC;
   }
+.Main__email::-ms-input-placeholder {
+    color: #CCC;
+  }
 .Main__email::placeholder {
     color: #CCC;
   }
+.Main__email--full {
+    width: 100%;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+  }
 .Main__button {
+    display: inline-block;
     width: 33.33%;
-    background: #000;
+    background: rgba(0, 0, 0, .4);
     color: #fff;
     padding: 8px;
-    margin: 0 0 0 0;
+    margin: 0;
     border: 0;
     text-transform: uppercase;
     font-size: .6rem;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+  }
+.Main__button:hover {
+    background: rgba(0, 0, 0, .8);
+  }
+.Main__button--disabled {
+    display: none;
   }
 .NotFound {
   font-size: 2rem;

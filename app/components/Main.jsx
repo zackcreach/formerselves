@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import 'styles/styles';
 import logo from 'images/fs-logo';
+import mobilebg from 'images/mobilebg';
 import base from '../base';
 import moment from 'moment';
 
@@ -65,29 +66,31 @@ export default class Main extends Component {
             <source src={videoURL} type='video/mp4'></source>
           </video>
         </div>
+        <div className="Main__video-container-mobile">
+          <img className="Main__bg-image" src={mobilebg} />
+        </div>
         <div className='Main__mask'></div>
         <div className='Main__container'>
-          
-            <img className='Main__logo' src={logo} />
-            <form 
-              className='Main__email-form' 
-              ref={(input) => {this.emailForm = input}} 
-              onSubmit={(e) => this._handleSubmit(e)}
-              onChange={(e) => this._handleChange(e)}
-            >
-              <input 
-                ref={(input) => {this.emailAddress = input}} 
-                placeholder={placeholder}
-                className={emailToggle}
-                disabled={inputDisabled}
-              />
-              <input 
-                type='submit'
-                className={buttonToggle}
-                disabled={buttonDisabled} 
-              />
-            </form>
-          </div>
+          <img className='Main__logo' src={logo} />
+          <form 
+            className='Main__email-form' 
+            ref={(input) => {this.emailForm = input}} 
+            onSubmit={(e) => this._handleSubmit(e)}
+            onChange={(e) => this._handleChange(e)}
+          >
+            <input 
+              ref={(input) => {this.emailAddress = input}} 
+              placeholder={placeholder}
+              className={emailToggle}
+              disabled={inputDisabled}
+            />
+            <input 
+              type='submit'
+              className={buttonToggle}
+              disabled={buttonDisabled} 
+            />
+          </form>
+        </div>
       </div>
     )
   }

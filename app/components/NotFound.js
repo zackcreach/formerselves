@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import 'styles/styles';
+import 'styles/components/NotFound';
 
 class NotFound extends Component {
   constructor(props) {

@@ -5,7 +5,7 @@ import mobilebg from 'images/mobilebg';
 import base from '../base';
 import moment from 'moment';
 
-export default class Main extends Component {
+export default class Home extends Component {
   constructor() {
     super();
     
@@ -57,23 +57,23 @@ export default class Main extends Component {
   }
   render() {
     const { videoURL, placeholder, buttonDisabled, inputDisabled } = this.state;
-    let emailToggle = buttonDisabled ? 'Main__email Main__email--full' : 'Main__email';
-    let buttonToggle = buttonDisabled ? 'Main__button Main__button--disabled' : 'Main__button';
+    let emailToggle = buttonDisabled ? 'Home__email Home__email--full' : 'Home__email';
+    let buttonToggle = buttonDisabled ? 'Home__button Home__button--disabled' : 'Home__button';
     return(
-      <div className='Main'>
-        <div className='Main__video-container'>
-          <video className='Main__video' muted autoPlay loop>
+      <div className='Home'>
+        <div className='Home__video-container'>
+          <video className='Home__video' muted autoPlay loop>
             <source src={videoURL} type='video/mp4'></source>
           </video>
         </div>
-        <div className="Main__video-container-mobile">
-          <img className="Main__bg-image" src={mobilebg} />
+        <div className="Home__video-container-mobile">
+          <img className="Home__bg-image" src={mobilebg} />
         </div>
-        <div className='Main__mask'></div>
-        <div className='Main__container'>
-          <img className='Main__logo' src={logo} />
+        <div className='Home__mask'></div>
+        <div className='Home__container'>
+          <img className='Home__logo' src={logo} />
           <form 
-            className='Main__email-form' 
+            className='Home__email-form' 
             ref={(input) => {this.emailForm = input}} 
             onSubmit={(e) => this._handleSubmit(e)}
             onChange={(e) => this._handleChange(e)}

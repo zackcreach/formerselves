@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
@@ -9,7 +10,7 @@ module.exports = {
     app: [
       'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
       'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-      './app/app.jsx',
+      './app/app.js',
     ]
   },
   output: {
@@ -32,30 +33,20 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(), // To actually name the modules loaded within the chrome console
     new webpack.NamedModulesPlugin(), // Don't make/load changes if there's errors
     new webpack.NoEmitOnErrorsPlugin(), // Extract all css files in the app/styles folder and save as a single file in public/styles/styles.css
+    new HTMLWebpackPlugin({
+      template: './app/index.html',
+      filename: 'index.html',
+    }),
     new ExtractTextPlugin({
       filename: 'styles/styles.css',
       ignoreOrder: true, // Useful for CSS modules
     }),
-    // Disabled as it only adds script tags, does not check for existing tags and keeps adding on
-    // new HtmlWebpackPlugin({
-    //   template: 'public/index.html',
-    //   inject: true,
-    // }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       },
     }),
   ],
-  devServer: { // Webpack config settings for webpack-dev-server. This can also be broken out into webpack-dev-server.js or server.js, but these parameters will override
-    host: 'localhost',
-    contentBase: './public', // contentBase is where your index.html file is, which in this case is not located in root (default) so we specify './public' instead
-    port: 3000,
-    hot: true, // necessary for hot module replacement plugin, can also be started with the webpack-dev-server --hot flag
-    open: true, // open simply opens the browser to localhost when webpack compiles
-    openPage: '', // openPage fixes a current issue where the "open" attribute opens to localhost:3000/undefined. It's an open issue on Github
-    historyApiFallback: true, // on refresh in a subdirectory, sends any not found page back to / and then react router will pick up and redirect to the right place
-  },
   module: {
     rules: [
       {
@@ -126,6 +117,15 @@ module.exports = {
         ],
       },
     ],
+  },
+  devServer: { // Webpack config settings for webpack-dev-server. This can also be broken out into webpack-dev-server.js or server.js, but these parameters will override
+    host: 'localhost',
+    contentBase: './public', // contentBase is where your index.html file is, which in this case is not located in root (default) so we specify './public' instead
+    port: 3000,
+    hot: true, // necessary for hot module replacement plugin, can also be started with the webpack-dev-server --hot flag
+    open: true, // open simply opens the browser to localhost when webpack compiles
+    openPage: '', // openPage fixes a current issue where the "open" attribute opens to localhost:3000/undefined. It's an open issue on Github
+    historyApiFallback: true, // on refresh in a subdirectory, sends any not found page back to / and then react router will pick up and redirect to the right place
   },
   devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-eval-source-map',
 };

@@ -2,10 +2,4 @@
 @import 'global/_variables.css';
 @import 'global/_mixins.css';
 @import 'global/_global.css';
-
-/* Module styles */
-@import 'modules/_page-section.css';
-
- /*Component styles */
- @import 'components/_Main.css';
- @import 'components/_NotFound.css';
+@import 'global/_page-section.css';

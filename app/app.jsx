@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
-import Main from 'Main';
+import Home from 'Home';
+import Browse from 'Browse';
 import NotFound from 'NotFound';
 
 const render = () => {
@@ -12,8 +13,9 @@ const render = () => {
     <AppContainer>
       <Router>
         <Switch>
-          <Route exact path='/' component={Main} />
-          <Route path='/home' component={Main} />
+          <Route exact path='/' component={Home} />
+          <Route path='/home' component={Home} />
+          <Route path='/browse' component={Browse} />
           <Route component={NotFound} />
         </Switch>
       </Router>

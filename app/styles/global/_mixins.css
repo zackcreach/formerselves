@@ -1,12 +1,5 @@
 /* Media Queries */
 
-/*
-Implement using:
-	@mixin atSmall {
-		property: value
-	}
-*/
-
 @define-mixin atSmall {
 	@media (min-width: 480px) {
 		@mixin-content;

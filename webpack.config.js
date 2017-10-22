@@ -56,14 +56,7 @@ module.exports = {
       },
       {
         test: /\.s?css$/, // regex tests for scss or css. the ? after makes the s optional, and the $ indicates end of string
-        use: [
-          {
-            loader: 'css-hot-loader', // this loader is a lot like react-hot-loader: it loads new css chunks as they're saved
-            options: {
-              // fileMap: 'styles/styles.css',
-            }
-          }
-        ].concat(ExtractTextPlugin.extract({
+        use: ['css-hot-loader'].concat(ExtractTextPlugin.extract({
           fallback: 'style-loader', // fallback is style-loader, which directly injects styles into the page (via <style> tags)
           use: [
             {

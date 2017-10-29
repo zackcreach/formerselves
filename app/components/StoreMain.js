@@ -9,15 +9,19 @@ export default class StoreMain extends Component {
   constructor() {
     super();
   }
+  componentDidMount() {
+    console.log(window);
+  }
   render() {
     return (
       <div className="StoreMain wrapper">
         <StoreNav />
-        <Route exact path="/store/shop" component={StoreBrowse} />
-        <Route exact path="/store/lookbooks" component={Lookbooks} />
-        <Route exact path="/store/press" component={Press} />
-        <Route exact path="/store/faq" component={Faq} />
-        <Route exact path="/store/contact" component={Contact} />
+        <Route path="/store" exact component={StoreBrowse} />
+        <Route path="/store/shop" component={StoreBrowse} />
+        <Route path="/store/lookbooks" component={Lookbooks} />
+        <Route path="/store/press" component={Press} />
+        <Route path="/store/faq" component={Faq} />
+        <Route path="/store/contact" component={Contact} />
       </div>
     )
   }

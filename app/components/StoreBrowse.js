@@ -7,7 +7,9 @@ export default class StoreBrowse extends Component {
   }
   render() {
     return (
-      <h1>StoreBrowse</h1>
+      <div className="StoreBrowse">
+        <h1>StoreBrowse</h1>
+      </div>
     );
   }
 }

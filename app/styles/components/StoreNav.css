@@ -1,4 +1,48 @@
 .StoreNav {
+  border: 1px solid red;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  font-size: .8rem;
 
+  &__image-container {
+    width: 150px;
+  }
   
+  &__image {
+    
+  }
+
+  &__list {
+
+  }
+
+  &__list-item {
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 0 40px 0 0;
+  }
+  
+  &__list-item:first-child {
+    padding-left: 0;
+  }
+  
+  &__list-item:last-child {
+    padding-right: 0;
+  }
+
+  &__link {
+    color: #333;
+    transition: all .3s linear;
+  }
+
+  &__link:hover {
+    color: #777;
+  }
+
+  &__link--active {
+    color: #000;
+  }
 }

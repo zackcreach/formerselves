@@ -2,6 +2,7 @@
 @import 'global/_variables.css';
 @import 'global/_mixins.css';
 @import 'global/_global.css';
+@import 'global/_wrapper.css';
 
 /* Module styles */
 @import 'modules/_page-section.css';

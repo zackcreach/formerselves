@@ -8,7 +8,6 @@ export default class CheckoutMain extends Component {
   render() {
     return (
       <div className="CheckoutMain">
-        
       </div>
     )
   }

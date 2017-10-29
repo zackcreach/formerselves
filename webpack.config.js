@@ -42,11 +42,11 @@ module.exports = {
       filename: 'styles/styles.css',
       ignoreOrder: true, // Useful for CSS modules
     }),
-    new UglifyWebpackPlugin({
-      uglifyOptions: {
-        warnings: false
-      },
-    }),
+    // new UglifyWebpackPlugin({
+    //   uglifyOptions: {
+    //     warnings: false
+    //   },
+    // }),
   ],
   module: {
     rules: [
@@ -121,5 +121,5 @@ module.exports = {
     openPage: '', // openPage fixes a current issue where the "open" attribute opens to localhost:3000/undefined. It's an open issue on Github
     historyApiFallback: true, // on refresh in a subdirectory, sends any not found page back to / and then react router will pick up and redirect to the right place
   },
-  devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-source-map',
+  // devtool: process.env.NODE_ENV === 'production' ? undefined : 'cheap-module-source-map',
 };

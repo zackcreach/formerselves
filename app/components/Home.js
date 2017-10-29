@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import 'styles/styles';
 import logo from 'images/fs-logo';
 import mobilebg from 'images/mobilebg';

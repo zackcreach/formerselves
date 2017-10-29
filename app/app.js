@@ -5,6 +5,8 @@ import {AppContainer} from 'react-hot-loader';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 import Home from 'Home';
+import StoreMain from 'StoreMain';
+import CheckoutMain from 'CheckoutMain';
 import NotFound from 'NotFound';
 
 const render = () => {
@@ -14,6 +16,8 @@ const render = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/home' component={Home} />
+          <Route path='/store' component={StoreMain} />
+          <Route path='/checkout' component={CheckoutMain} />
           <Route component={NotFound} />
         </Switch>
       </Router>

@@ -7,5 +7,12 @@
 @import 'modules/_page-section.css';
 
 /*Component styles */
+@import 'components/CheckoutMain.css';
 @import 'components/Home.css';
 @import 'components/NotFound.css';
+@import 'components/StoreBrowse.css';
+@import 'components/StoreCart.css';
+@import 'components/StoreDetail.css';
+@import 'components/StoreFilter.css';
+@import 'components/StoreMain.css';
+@import 'components/StoreNav.css';

@@ -1,18 +1,18 @@
-import React, {Component} from 'react';
-import 'styles/styles';
-import 'styles/components/NotFound';
+import React, { Component } from "react";
+import "styles/styles";
+import "styles/components/NotFound";
 
 class NotFound extends Component {
   constructor(props) {
     super(props);
   }
   render() {
-    return(
+    return (
       <div>
-        <h1 className='NotFound NotFound__bold'>Page Not Found</h1>
+        <h1 className="NotFound NotFound__bold">Page Not Found</h1>
       </div>
-    )
+    );
   }
-};
+}
 
 export default NotFound;
